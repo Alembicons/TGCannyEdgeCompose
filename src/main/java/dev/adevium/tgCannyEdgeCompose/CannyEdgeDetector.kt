@@ -1,4 +1,4 @@
-package com.kaanelloed.iconeration.image.edge
+package dev.adevium.tgCannyEdgeCompose
 
 import android.graphics.Bitmap
 import androidx.compose.ui.graphics.Color

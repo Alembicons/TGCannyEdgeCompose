@@ -53,7 +53,7 @@ afterEvaluate {
 
                 groupId = 'dev.Adevium'
                 artifactId = 'TGCannyEdgeCompose'
-                version = '1.0.0'
+                version = '1.0.1'
 
                 pom {
                     name = 'TGCannyEdgeCompose'
