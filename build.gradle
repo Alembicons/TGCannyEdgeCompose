@@ -1,0 +1,71 @@
+apply plugin: 'com.android.library'
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'maven-publish'
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+buildscript {
+    ext {
+        kotlin_version = '2.0.21'
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:8.6.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+android {
+    namespace "dev.Adevium.TGCannyEdgeCompose"
+    compileSdk 35
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 35
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'dev.Adevium'
+                artifactId = 'TGCannyEdgeCompose'
+                version = '1.0.0'
+
+                pom {
+                    name = 'TGCannyEdgeCompose'
+                    description = 'Canny edge detector for android compose.'
+                    url = 'https://github.com/Adevium/TGCannyEdgeCompose'
+                }
+            }
+        }
+    }
+}
+
+
+dependencies {
+    implementation "androidx.compose.ui:ui-android:1.7.3"
+}
