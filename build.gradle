@@ -22,7 +22,7 @@ buildscript {
 }
 
 android {
-    namespace "dev.Adevium.TGCannyEdgeCompose"
+    namespace "dev.AlembiconsProject.TGCannyEdgeCompose"
     compileSdk 35
 
     defaultConfig {
@@ -51,14 +51,14 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
 
-                groupId = 'dev.Adevium'
+                groupId = 'dev.AlembiconsProject'
                 artifactId = 'TGCannyEdgeCompose'
-                version = '1.0.1'
+                version = '1.0.2'
 
                 pom {
                     name = 'TGCannyEdgeCompose'
                     description = 'Canny edge detector for android compose.'
-                    url = 'https://github.com/Adevium/TGCannyEdgeCompose'
+                    url = 'https://github.com/Alembicons/TGCannyEdgeCompose'
                 }
             }
         }

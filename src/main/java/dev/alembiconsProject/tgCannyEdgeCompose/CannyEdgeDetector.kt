@@ -1,4 +1,4 @@
-package dev.adevium.tgCannyEdgeCompose
+package dev.alembiconsProject.tgCannyEdgeCompose
 
 import android.graphics.Bitmap
 import androidx.compose.ui.graphics.Color
@@ -58,8 +58,14 @@ class CannyEdgeDetector {
         contrastNormalized = false
     }
 
-    fun process(image: ImageBitmap, edgeColor: Int) {
+    fun process(image: ImageBitmap, edgeColor: Int, options: DetectionOptions) {
         sourceImage = image
+
+        lowThreshold = options.lowThreshold
+        highThreshold = options.highThreshold
+        gaussianKernelRadius = options.gaussianKernelRadius
+        gaussianKernelWidth = options.gaussianKernelWidth
+        contrastNormalized = options.contrastNormalized
 
         width = sourceImage.width
         height = sourceImage.height
